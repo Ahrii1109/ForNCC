@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 500); // 最终显示时间
             } else {
                 setTimeout(flashImage, interval); // 逐渐增加时间间隔
-            }
+            } 
         };
         
         setTimeout(flashImage, interval);

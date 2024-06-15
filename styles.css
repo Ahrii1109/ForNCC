@@ -52,6 +52,40 @@ nav .nav-links a:hover {
     text-decoration: underline;
 }
 
+.text-block {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-block h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.text-block p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+
+.cursor {
+    display: inline-block;
+    animation: blink 500ms steps(1) infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
 button {
     display: block;
     margin: 20px auto;

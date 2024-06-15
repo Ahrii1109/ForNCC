@@ -1,7 +1,67 @@
+body {
+    font-family: 'cursive', sans-serif;
+    background-color: #e3e8f3;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #8F9FC9;
+    padding: 20px 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8F9FC9; 
+    padding: 20px 20px;
+}
+
+nav .logo img {
+    height: 80px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    color: white; 
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold; 
+}
+
+nav .nav-links a:hover {
+    text-decoration: underline;
+}
+
 .characters {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding: 20px;
 }
 
 .character {
@@ -11,7 +71,13 @@
 }
 
 .character img {
-    max-width: 400px;
+    max-width: 160px;
+    border-radius: 20px;
+    transition: transform 0.2s; /* 添加过渡效果 */
+}
+
+.character img:hover {
+    transform: scale(1.05); /* 放大图片 */
 }
 
 .character h2 {
@@ -20,4 +86,23 @@
 
 .character p {
     font-size: 14px;
+    color: #666;
+}
+
+/* 移动端样式 */
+@media (max-width: 600px) {
+    .nav .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .characters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .character {
+        width: 100%;
+        max-width: 300px;
+    }
 }
