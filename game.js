@@ -22,26 +22,28 @@ document.addEventListener('DOMContentLoaded', function() {
     randomImageBtn.addEventListener('click', function() {
         // 设置初始闪烁速度
         randomImageBtn.style.display = 'none'; // 隐藏抽取按钮
-        let interval = 100;
+        let interval = 5;
         
-        const flashInterval = setInterval(function() {
+        const flashImage = function() {
             const selectedImage = getRandomImage();
             randomImage.src = selectedImage.src;
             imageName.textContent = selectedImage.name;
-            
-            interval += 20;
-            if (interval >10000) {
-                clearInterval(flashInterval);
+
+            interval *= 1.1; // 逐渐增加时间间隔
+
+            if (interval > 450) {
                 setTimeout(function() {
-                    const selectedImage = getRandomImage();
-                    randomImage.src = selectedImage.src;
-                    imageName.textContent = selectedImage.name;
+                    const finalImage = getRandomImage();
+                    randomImage.src = finalImage.src;
+                    imageName.textContent = finalImage.name;
                     logoutBtn.style.display = 'block';
-                }, 100); // 最终显示时间
-            }else {
-                setTimeout(flashInterval, interval); // 逐渐增加时间间隔
+                }, 500); // 最终显示时间
+            } else {
+                setTimeout(flashImage, interval); // 逐渐增加时间间隔
             }
-        }, interval); // 控制闪烁速度
+        };
+        
+        setTimeout(flashImage, interval);
     });
 
     // 登出按钮

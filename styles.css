@@ -17,17 +17,16 @@ p {
     margin-top: 10px;
 }
 
-/* 導覽行樣式 */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #8F9FC9; /* 灰色背景 */
+    background-color: #8F9FC9; 
     padding: 20px 5px;
 }
 
 nav .logo img {
-    height: 120px;
+    height: 80px;
 }
 
 nav .nav-links {
@@ -43,10 +42,10 @@ nav .nav-links li {
 }
 
 nav .nav-links a {
-    color: white; /* 白色文字 */
+    color: white; 
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold; /* 將導航欄的文字加粗 */
+    font-size: 16px;
+    font-weight: bold; 
 }
 
 nav .nav-links a:hover {
