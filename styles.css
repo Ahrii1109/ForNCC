@@ -94,7 +94,7 @@ button {
 }
 
 @media (max-width: 600px) {
-    nav .nav-links {
+    .nav .nav-links {
         flex-direction: column;
         gap: 10px;
     }
