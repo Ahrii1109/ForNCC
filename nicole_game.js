@@ -4,11 +4,11 @@ const images = [
     { name: "安慰賞 貼圖抱抱一個", src: "images/photo3.jpg", probability: 0.04 },
     { name: "安慰賞 貼圖抱抱一個", src: "images/photo4.jpg", probability: 0.04 },
     { name: "安慰賞 貼圖抱抱一個", src: "images/photo5.jpg", probability: 0.04 },
-    { name: "安慰賞 抱抱一個", src: "images/photo6.jpg", probability: 0.04 },
-    { name: "安慰賞 抱抱一個", src: "images/photo7.jpg", probability: 0.04 },
-    { name: "安慰賞 抱抱一個", src: "images/photo8.jpg", probability: 0.04 },
-    { name: "安慰賞 抱抱一個", src: "images/photo9.jpg", probability: 0.04 },
-    { name: "安慰賞 抱抱一個", src: "images/photo10.jpg", probability: 0.04 },
+    { name: "安慰賞 貼圖親親一個", src: "images/photo6.jpg", probability: 0.04 },
+    { name: "安慰賞 貼圖親親一個", src: "images/photo7.jpg", probability: 0.04 },
+    { name: "安慰賞 貼圖親親一個", src: "images/photo8.jpg", probability: 0.04 },
+    { name: "安慰賞 貼圖親親一個", src: "images/photo9.jpg", probability: 0.04 },
+    { name: "安慰賞 貼圖親親一個", src: "images/photo10.jpg", probability: 0.04 },
     { name: "四獎 照片親親一個", src: "images/photo11.jpg", probability: 0.03 },
     { name: "四獎 照片親親一個", src: "images/photo12.jpg", probability: 0.03 },
     { name: "四獎 照片親親一個", src: "images/photo13.jpg", probability: 0.03 },
@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     randomImage.src = finalImage.src;
                     imageName.textContent = finalImage.name;
                     logoutBtn.style.display = 'block';
-                }, 500); // 最终显示时间
+                }, 500); 
             } else {
-                setTimeout(flashImage, interval); // 逐渐增加时间间隔
+                setTimeout(flashImage, interval); 
             } 
         };
         
