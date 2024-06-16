@@ -18,7 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         window.location.href = 'nicole_game.html'; // 重定向到 Nicole 专属的页面
     }
     else {
-        alert('使用者名稱或密碼錯誤');
+        alert('都跟你說帳號密碼了，為啥能打錯!!!');
     }
 });
 

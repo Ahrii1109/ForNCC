@@ -22,7 +22,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: #8F9FC9; 
-    padding: 20px 5px;
+    padding: 20px 20px;
 }
 
 nav .logo img {
@@ -32,7 +32,7 @@ nav .logo img {
 nav .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
     margin: 0;
     padding: 0;
 }

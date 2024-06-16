@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const texts = [
-        "親愛的陳小姐，這是我們對您的感謝之情。",
+        "       還記得大一的時候",
         "在這裡，我們想向您表達我們的愛與敬意。",
         "希望我們的心意能帶給您一些溫暖與快樂。"
     ];
 
     const ids = ["text1", "text2", "text3"];
-    const typingSpeed = 100; // 打字速度 (每毫秒显示一个字符)
+    const typingSpeed = 100; 
     let currentIndex = 0;
 
     function typeText(index) {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (currentIndex < texts.length) {
                 setTimeout(function() {
                     typeText(currentIndex);
-                }, 1000); // 在切换文本前等待 1 秒
+                }, 500); // 在切换文本前等待 1 秒
             }
         });
     }
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     typeText(currentIndex);
 
-    // 光标闪烁效果
+  
     const style = document.createElement('style');
     style.innerHTML = `
         .cursor {
