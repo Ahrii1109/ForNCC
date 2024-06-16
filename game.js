@@ -1,16 +1,36 @@
-// 假设你的 50 张照片的文件名是 photo1.jpg, photo2.jpg, ..., photo50.jpg
-// 图片的名称和抽出概率
 const images = [
-    { name: "图片1", src: "images/photo1.jpg", probability: 0.1 },
-    { name: "图片2", src: "images/photo2.jpg", probability: 0.1 },
-    { name: "图片3", src: "images/photo3.jpg", probability: 0.1 },
-    { name: "图片4", src: "images/photo4.jpg", probability: 0.1 },
-    { name: "图片5", src: "images/photo5.jpg", probability: 0.1 },
-    { name: "图片6", src: "images/photo6.jpg", probability: 0.1 },
-    { name: "图片7", src: "images/photo7.jpg", probability: 0.1 },
-    { name: "图片8", src: "images/photo8.jpg", probability: 0.1 },
-    { name: "图片9", src: "images/photo9.jpg", probability: 0.1 },
-    { name: "图片10", src: "images/photo10.jpg", probability: 0.1 }
+    { name: "你今天運氣普普通通餒QQ", src: "images/photo1.jpg", probability: 0.04 },
+    { name: "你今天運氣普普通通餒QQ", src: "images/photo2.jpg", probability: 0.04 },
+    { name: "你今天運氣普普通通餒QQ", src: "images/photo3.jpg", probability: 0.04 },
+    { name: "你今天運氣普普通通餒QQ", src: "images/photo4.jpg", probability: 0.04 },
+    { name: "你今天運氣普普通通餒QQ", src: "images/photo5.jpg", probability: 0.04 },
+    { name: "你今天運氣普普通通餒QQ", src: "images/photo6.jpg", probability: 0.04 },
+    { name: "你今天運氣普普通通餒QQ", src: "images/photo7.jpg", probability: 0.04 },
+    { name: "你今天運氣普普通通餒QQ", src: "images/photo8.jpg", probability: 0.04 },
+    { name: "你今天運氣普普通通餒QQ", src: "images/photo9.jpg", probability: 0.04 },
+    { name: "你今天運氣普普通通餒QQ", src: "images/photo10.jpg", probability: 0.04 },
+    { name: "你今天運氣還不錯喔!!!", src: "images/photo14.jpg", probability: 0.03 },
+    { name: "你今天運氣還不錯喔!!!", src: "images/photo15.jpg", probability: 0.03 },
+    { name: "你今天運氣還不錯喔!!!", src: "images/photo16.jpg", probability: 0.03 },
+    { name: "你今天運氣還不錯喔!!!", src: "images/photo23.jpg", probability: 0.03 },
+    { name: "運氣爆棚啦!!!走在路上注意看地板有可能會撿到錢喔喔喔!!!", src: "images/photo43.jpg", probability: 0.01 },
+    { name: "你今天運氣還不錯喔!!!", src: "images/photo24.jpeg", probability: 0.03 },
+    { name: "你今天運氣還不錯喔!!!", src: "images/photo26.jpg", probability: 0.03 },
+    { name: "你今天運氣還不錯喔!!!", src: "images/photo31.jpg", probability: 0.03 },
+    { name: "你今天運氣還不錯喔!!!", src: "images/photo32.jpg", probability: 0.03 },
+    { name: "你今天運氣還不錯喔!!!", src: "images/photo33.jpg", probability: 0.03 },
+    { name: "你今天運氣嘎嘎頂 要不要考慮買刮刮樂啊~~~", src: "images/photo11.jpg", probability: 0.02 },
+    { name: "你今天運氣嘎嘎頂 要不要考慮買刮刮樂啊~~~", src: "images/photo12.jpg", probability: 0.02 },
+    { name: "你今天運氣嘎嘎頂 要不要考慮買刮刮樂啊~~~", src: "images/photo13.jpg", probability: 0.02 },
+    { name: "你今天運氣嘎嘎頂 要不要考慮買刮刮樂啊~~~", src: "images/photo19.jpg", probability: 0.02 },
+    { name: "你今天運氣嘎嘎頂 要不要考慮買刮刮樂啊~~~", src: "images/photo17.jpg", probability: 0.02 },
+    { name: "你今天運氣嘎嘎頂 要不要考慮買刮刮樂啊~~~", src: "images/photo18.jpg", probability: 0.02 },
+    { name: "你今天運氣嘎嘎頂 要不要考慮買刮刮樂啊~~~", src: "images/photo37.jpg", probability: 0.02 },
+    { name: "你今天運氣嘎嘎頂 要不要考慮買刮刮樂啊~~~", src: "images/photo38.jpg", probability: 0.02 },
+    { name: "你今天運氣嘎嘎頂 要不要考慮買刮刮樂啊~~~", src: "images/photo27.jpeg", probability: 0.015 },
+    { name: "你今天運氣嘎嘎頂 要不要考慮買刮刮樂啊~~~", src: "images/photo41.jpg", probability: 0.015 },
+    { name: "抽到我算你雖到有剩了...出門小心啊...", src: "images/photo42.jpg", probability: 0.01 },
+    { name: "你今天運氣還不錯喔!!!", src: "images/photo28.jpg", probability: 0.03 }
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -29,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
             randomImage.src = selectedImage.src;
             imageName.textContent = selectedImage.name;
 
-            interval *= 1.1; // 逐渐增加时间间隔
+            interval *= 1.07; // 逐渐增加时间间隔
 
-            if (interval > 450) {
+            if (interval > 400) {
                 setTimeout(function() {
                     const finalImage = getRandomImage();
                     randomImage.src = finalImage.src;

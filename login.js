@@ -1,4 +1,3 @@
-// login.js 文件
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
@@ -6,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
 
 
-    // 簡單的驗證（實際應用中應該使用更安全的驗證方式）
+
     if (username === 'Guest' && password === 'password') {
         sessionStorage.setItem('loggedIn', true);
         alert('訪客登入成功');
@@ -27,11 +26,10 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // 檢查用戶是否已登入
+
     const loggedIn = sessionStorage.getItem('loggedIn');
 
     if (loggedIn) {
-        // 已登入用户，显示正常游戏页面
         document.getElementById('game-container').style.display = 'block';
         document.getElementById('login-container').style.display = 'none';
 
