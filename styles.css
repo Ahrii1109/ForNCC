@@ -92,3 +92,19 @@ button {
     padding: 10px 20px;
     font-size: 16px;
 }
+
+@media (max-width: 768px) {
+    nav .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .text-block {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    nav .logo img {
+        height: 60px;
+    }
+}
