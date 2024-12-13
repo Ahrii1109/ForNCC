@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const ids = ["text1", "text2", "text3", "text4","text5"];
-    const typingSpeed = 200; 
+    const typingSpeed = 300; 
     let currentIndex = 0;
 
     function typeText(index) {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (currentIndex < texts.length) {
                 setTimeout(function() {
                     typeText(currentIndex);
-                }, 500); 
+                }, 300); 
             }
         });
     }
