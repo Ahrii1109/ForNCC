@@ -18,7 +18,7 @@ const images = [
     { name: "四獎 照片親親一個", src: "images/photo17.jpg", probability: 0.03 },
     { name: "四獎 照片親親一個", src: "images/photo18.jpg", probability: 0.03 },
     { name: "四獎 照片親親一個", src: "images/photo19.jpg", probability: 0.03 },
-    { name: "終極大獎 飛往新加坡機票一張", src: "images/photo20.jpg", probability: 0.005 },
+    { name: "終極大獎 飛往新加坡機票一張", src: "images/photo20.jpg", probability: 0.95 },
     { name: "三獎 葛請外送(200內)", src: "images/photo21.jpg", probability: 0.03 },
     { name: "三獎 葛請外送(200內)", src: "images/photo22.jpg", probability: 0.03 },
     { name: "三獎 葛請外送(200內)", src: "images/photo23.jpg", probability: 0.03 },
