@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(createHearts, 100);
 
-    // 倒計時功能
-    const birthday = new Date('2025-03-04T00:00:00');
+    // 修改倒計時日期為 2026 年
+    const birthday = new Date('2026-03-04T00:00:00');
     
     function updateCountdown() {
         const now = new Date();
@@ -95,7 +95,90 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('opened');
             setTimeout(() => {
                 typeMessage(birthdayMessage, messageElement);
-            }, 1500);
+            }, 4500);
         }
     });
+
+    // 添加信件點擊產生愛心效果
+    const letter = document.querySelector('.letter');
+    
+    function createClickHeart(x, y) {
+        const heart = document.createElement('span');
+        heart.className = 'click-heart';
+        heart.textContent = heartTypes[Math.floor(Math.random() * heartTypes.length)];
+        
+        // 使用隨機顏色
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+        
+        // 隨機選擇大小和旋轉角度
+        const size = Math.random() * 10 + 20;
+        const rotation = Math.random() * 30 - 15;
+        
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
+        heart.style.fontSize = size + 'px';
+        heart.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+        
+        letter.appendChild(heart);
+        
+        // 動畫結束後移除愛心
+        setTimeout(() => {
+            heart.remove();
+        }, 1000);
+    }
+    
+    let clickCount = 0;
+    const CLICK_THRESHOLD = 15;
+    
+    letter.addEventListener('click', function(e) {
+        const envelope = document.getElementById('envelope');
+        if (envelope.classList.contains('opened')) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            createClickHeart(x, y);
+            
+            clickCount++;
+            
+            if (clickCount === CLICK_THRESHOLD) {
+                // 直接將文字透明度設為0
+                messageElement.style.opacity = 0;
+                
+                // 短暫延遲後開始顯示新內容
+                setTimeout(() => {
+                    messageElement.textContent = secretMessage;
+                    // 慢慢顯示新內容
+                    fadeInText(messageElement);
+                }, 500);
+            }
+        }
+    });
+
+    // 添加淡入效果函數
+    function fadeInText(element) {
+        let opacity = 0;
+        element.style.opacity = opacity;
+        
+        const fade = setInterval(() => {
+            opacity += 0.05;
+            element.style.opacity = opacity;
+            
+            if (opacity >= 1) {
+                clearInterval(fade);
+            }
+        }, 50);
+    }
+
+    // 添加彩蛋內容
+    const secretMessage = `親愛的Nicole：
+
+        哇！被你發現了這個小彩蛋！
+        看來你真的很喜歡點擊產生愛心呢～
+        
+        其實這個網站的每個角落都藏著我的一點心意，
+        就像你總是能在生活中發現美好的小細節一樣。
+        
+        希望這個小驚喜能讓你開心 ❤️
+        
+        永遠支持你的 温`;
 }); 

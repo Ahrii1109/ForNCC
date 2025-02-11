@@ -56,7 +56,7 @@ h1 {
     margin: 0 auto;
     position: relative;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 1.2s ease;
     transform-style: preserve-3d;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -70,7 +70,7 @@ h1 {
     height: 100%;
     background: #ff7b8f;
     clip-path: polygon(0 0, 50% 50%, 100% 0);
-    transition: transform 0.8s ease-out 0.4s;
+    transition: transform 2.4s ease-out 1.2s;
     transform-origin: top center;
     z-index: 2;
 }
@@ -85,7 +85,7 @@ h1 {
     border-left: 150px solid transparent;
     border-right: 150px solid transparent;
     border-bottom: 100px solid #ff7b8f;
-    transition: all 0.4s ease-out;
+    transition: all 1.2s ease-out;
     transform-origin: bottom;
 }
 
@@ -98,7 +98,7 @@ h1 {
     font-size: 40px;
     color: #fff;
     z-index: 3;
-    transition: all 0.3s ease-out;
+    transition: all 0.9s ease-out;
 }
 
 .envelope.opened {
@@ -114,19 +114,19 @@ h1 {
 .envelope.opened .envelope-flap {
     transform: rotateX(-180deg) scale(0.95);
     opacity: 0;
-    transition: all 0.8s ease-out;
+    transition: all 2.4s ease-out;
 }
 
 .envelope.opened::before {
     transform: rotateX(-180deg) scale(0.95);
     opacity: 0;
-    transition: all 0.8s ease-out;
+    transition: all 2.4s ease-out;
 }
 
 .envelope.opened::after {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.5);
-    transition: all 0.6s ease-out;
+    transition: all 1.8s ease-out;
 }
 
 .envelope-content {
@@ -181,7 +181,7 @@ h1 {
 .envelope.opened .letter {
     opacity: 1;
     transform: rotateX(180deg) rotateX(180deg) translateY(0);
-    transition-delay: 1.4s;
+    transition-delay: 4.2s;
 }
 
 .letter h3 {
@@ -197,6 +197,7 @@ h1 {
     line-height: 2;
     white-space: pre-line;
     font-size: 1.1em;
+    transition: opacity 0.3s ease;
 }
 
 .envelope:not(.opened):hover {
@@ -231,10 +232,22 @@ h1 {
 @media (max-width: 768px) {
     #countdown {
         flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
     }
     
     .time-block {
-        min-width: 60px;
+        min-width: calc(50% - 20px);
+        padding: 10px;
+        margin: 5px;
+    }
+    
+    .time-block span {
+        font-size: 1.8em;
+    }
+    
+    .time-block p {
+        font-size: 0.9em;
     }
     
     .envelope.opened {
@@ -260,6 +273,18 @@ h1 {
     .letter p {
         font-size: 1em;
         line-height: 1.8;
+    }
+}
+
+/* 添加更小螢幕的樣式 */
+@media (max-width: 480px) {
+    .time-block {
+        min-width: calc(50% - 10px);
+        padding: 8px;
+    }
+    
+    .time-block span {
+        font-size: 1.5em;
     }
 }
 
@@ -292,5 +317,28 @@ h1 {
     100% {
         transform: translateY(100vh) translateX(20px) rotate(360deg);
         opacity: 0.6;
+    }
+}
+
+/* 添加點擊愛心的樣式 */
+.click-heart {
+    position: absolute;
+    pointer-events: none;
+    animation: clickHeartAnim 1s ease-out forwards;
+    z-index: 1000;
+}
+
+@keyframes clickHeartAnim {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translate(-50%, -80%) scale(1.2) rotate(20deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -120%) scale(0.8) rotate(40deg);
     }
 } 
