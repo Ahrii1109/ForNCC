@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         最後就是祝你生日快樂啦
         等我結訓就去找你玩
         
-        生日快樂`;
+        生日快樂!!!`;
     
     function typeMessage(text, element) {
         let index = 0;
